@@ -1,22 +1,21 @@
 #include<iostream>
+#include "Sum.h"
 
 using namespace std;
 
-int calculator() {
-	int num1, num2, sum;
-	cout << "Enter first number";
-	cin >> num1;
-	cout << "Enter secound number";
-	cin >> num2;
-	sum = num1 + num2;
-	
-	return sum;
+int calculator(int a, int b) {
+	Sum sum;
+	return sum.sum(a, b);
 }
 
 
 int main() {
-	
-	int sum = calculator();
-	cout << "The Sum is :" << sum;
+	int a, b;
+	cout << "Enter First Number" << endl;
+	cin >> a;
+	cout << "Enter Second Number" << endl;
+	cin >> b;
+	int addValue = calculator(a,b);
+	cout << "Sum of " << a << " and " << b <<" is :: "<< addValue<<endl;
 
 }
