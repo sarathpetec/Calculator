@@ -1,14 +1,16 @@
 #include<iostream>
-#include "Sum.cpp"
-#include "Substract.cpp"
-#include "Multiplication.cpp"
-#include "Division.cpp"
+#include "Sum.h"
+#include "Substract.h"
+#include "Multiplication.h"
+#include "Division.h"
 #include "Logger.h"
 
 using namespace std;
 
 int calculator(int a, int b, int operationNumber) {
 	int addValue;
+	Logger logger;
+	Logger *LoggerPointer = &logger;
 	switch (operationNumber)
 	{
 	case 1:
@@ -28,6 +30,7 @@ int calculator(int a, int b, int operationNumber) {
 		addValue = div.divide(a, b);
 		break;
 	default:
+		LoggerPointer->logDataWithNewLine("Operation is not valid...!");
 		break;
 	}
 	return addValue;
@@ -36,16 +39,16 @@ int calculator(int a, int b, int operationNumber) {
 
 int main() {
 	int a, b, operationNumber, calculateValue;
-	
-	Logger::logDataWithNewLine("Enter First Number");
+	Logger logger;
+	logger.logDataWithNewLine("Enter First Number");
 	cin >> a;
-	Logger::logDataWithNewLine("Enter Second Number");
+	logger.logDataWithNewLine("Enter Second Number");
 	cin >> b;
-	Logger::logDataWithNewLine("Enter the Operation number need to perform");
-	Logger::logDataWithNewLine("1. Addition");
-	Logger::logDataWithNewLine("2. Substraction");
-	Logger::logDataWithNewLine("3. Multiply");
-	Logger::logDataWithNewLine("4. Division");
+	logger.logDataWithNewLine("Enter the Operation number need to perform");
+	logger.logDataWithNewLine("1. Addition");
+	logger.logDataWithNewLine("2. Substraction");
+	logger.logDataWithNewLine("3. Multiply");
+	logger.logDataWithNewLine("4. Division");
 	cin >> operationNumber;
 	
 	calculateValue = calculator(a, b, operationNumber);

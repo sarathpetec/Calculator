@@ -1,10 +1,7 @@
-#include <iostream>
-class Substract
-{
+#include "Substract.h"
 
-public: int sub(int a, int b) {
+
+int Substract::sub(int a, int b) {
 	int result = a - b;
 	return result;
 }
-
-};

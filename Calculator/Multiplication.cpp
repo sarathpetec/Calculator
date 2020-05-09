@@ -1,7 +1,6 @@
-class Multiplication
-{
-public: int multiply(int a, int b) {
+#include "Multiplication.h"
+
+int Multiplication::multiply(int a, int b) {
 	int result = a * b;
 	return result;
 }
-};
