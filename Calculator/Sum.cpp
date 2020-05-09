@@ -1,15 +1,12 @@
 #include "Sum.h"
 
-Sum::Sum(int a, int b) {
-	setValue1(a);
-	setValue2(b);
+Sum::Sum(int a, int b) : value1(a), value2(b)
+{
+
 }
-void Sum::setValue1(int a) {
-	value1 = a;
+Sum::~Sum() {
 }
-void Sum::setValue2(int b) {
-	value2 = b;
-}
+
 int Sum::getValue1() {
 	return value1;
 }

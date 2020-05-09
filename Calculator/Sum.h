@@ -2,10 +2,11 @@
 
 class Sum {
 private:
-	int value1;
-	int value2;
+	const int value1;
+	const int value2;
 public: 
-	Sum(int a, int b);
+	Sum(int value1, int value2);
+	~Sum();
 	int sum();
 	void setValue1(int a);
 	void setValue2(int b);

@@ -6,12 +6,12 @@ Substract::Substract(int value1, int value2) {
 	setValue2(value2);
 }
 
-void Substract::setValue1(int subValue1) {
-	value1 = subValue1;
+void Substract::setValue1(int value1) {
+	this->value1 = value1;
 }
 
-void Substract::setValue2(int subValue2) {
-	value2 = subValue2;
+void Substract::setValue2(int value2) {
+	(*this).value2 = value2;
 }
 
 int Substract::getValue1() {
