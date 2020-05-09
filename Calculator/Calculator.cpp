@@ -27,14 +27,14 @@ int calculator(int a, int b, int operationNumber) {
 	}
 	case 3:
 	{
-		Multiplication mul;
-		addValue = mul.multiply(a, b);
+		Multiplication mul(a,b);
+		addValue = mul.multiply();
 		break;
 	}
 	case 4:
 	{
-		Division div;
-		addValue = div.divide(a, b);
+		Division div(a,b);
+		addValue = div.divide();
 		break;
 	}
 	default:

@@ -1,5 +1,4 @@
 #include "Sum.h"
-#include <iostream>
 
 Sum::Sum(int a, int b) {
 	setValue1(a);

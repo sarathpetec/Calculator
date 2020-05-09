@@ -1,6 +1,5 @@
 #pragma once
 
-
 class Sum {
 private:
 	int value1;
