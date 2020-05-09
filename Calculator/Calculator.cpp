@@ -8,29 +8,37 @@
 using namespace std;
 
 int calculator(int a, int b, int operationNumber) {
-	int addValue;
+	int addValue = 0;
 	Logger logger;
-	Logger *LoggerPointer = &logger;
+	Logger *loggerPointer = &logger;
 	switch (operationNumber)
 	{
 	case 1:
-		Sum sum;
-		addValue = sum.sum(a, b);
-		break;
+	{
+		Sum sum(a, b);
+		addValue = sum.sum();
+		break; 
+	}
 	case 2:
-		Substract sub;
-		addValue = sub.sub(a, b);
+	{
+		Substract sub(a,b);
+		addValue = sub.sub();
 		break;
+	}
 	case 3:
+	{
 		Multiplication mul;
 		addValue = mul.multiply(a, b);
 		break;
+	}
 	case 4:
+	{
 		Division div;
 		addValue = div.divide(a, b);
 		break;
+	}
 	default:
-		LoggerPointer->logDataWithNewLine("Operation is not valid...!");
+		loggerPointer->logDataWithNewLine("Operation is not valid...!");
 		break;
 	}
 	return addValue;
