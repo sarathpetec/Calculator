@@ -1,4 +1,5 @@
 #include "Division.h"
+#include "Logger.h"
 
 
 Division::Division(int value1, int value2) {
@@ -23,6 +24,16 @@ void Division::setValue2(int value2) {
 }
 
 int Division::calculate() {
-	int result = getValue1() / getValue2();
+	int result = 0;
+	try {
+		if (getValue2() == 0) {
+			throw std::runtime_error("Divide by zero Exception");
+		}
+		result = getValue1() / getValue2();
+	}
+	catch (const std::runtime_error &e) {
+		Logger logger;
+		logger.logDataWithNewLine(e.what());
+	}
 	return result;
 }
