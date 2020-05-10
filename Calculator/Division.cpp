@@ -22,7 +22,7 @@ void Division::setValue2(int value2) {
 	this->value2 = value2;
 }
 
-int Division::divide() {
+int Division::calculate() {
 	int result = getValue1() / getValue2();
 	return result;
 }

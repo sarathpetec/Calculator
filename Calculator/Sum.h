@@ -1,7 +1,8 @@
 #pragma once
 #include "ArithmeticEquation.h"
 
-class Sum : public ArithmeticEquation {
+
+class Sum : public ArithmeticEquation<int> {
 private:
 	const int value1;
 	const int value2;

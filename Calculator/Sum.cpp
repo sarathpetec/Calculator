@@ -29,7 +29,6 @@ int Sum::getValue2() {
 	return value2;
 }
 
-
 int Sum::calculate() {
 	int result = (getValue1() + getValue2());
 	return result;

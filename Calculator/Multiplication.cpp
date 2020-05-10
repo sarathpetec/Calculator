@@ -17,7 +17,7 @@ int Multiplication::getValue2() {
 	return value2;
 }
 
-int Multiplication::multiply() {
+int Multiplication::calculate() {
 	int result = getValue1() * getValue2();
 	return result;
 }

@@ -1,8 +1,10 @@
 #pragma once
 
+template <typename T>
 class ArithmeticEquation {
 
 public:
-	virtual int calculate()=0;
+	//Pure virtual function
+	virtual T calculate()=0;
 
 };

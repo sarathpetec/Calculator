@@ -1,6 +1,8 @@
 #pragma once
+#include "ArithmeticEquation.h"
 
-class Substract {
+
+class Substract : public ArithmeticEquation<int> {
 
 private:
 	int value1, value2;
@@ -10,7 +12,7 @@ public:
 	void setValue1(int value1);	
 	int getValue2();
 	void setValue2(int value2);
-	int sub();
+	int calculate();
 protected:
 
 };

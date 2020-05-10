@@ -11,32 +11,36 @@ int calculator(int a, int b, int operationNumber) {
 	int addValue = 0;
 	Logger logger;
 	Logger *loggerPointer = &logger;
+	ArithmeticEquation<int> *arithmeticEqu;
 	switch (operationNumber)
 	{
 	case 1:
 	{
 
 		Sum sum(a, b);
-		ArithmeticEquation* ae = &sum;
-		addValue = ae->calculate();
+		arithmeticEqu = &sum;
+		addValue = arithmeticEqu->calculate();
 		break; 
 	}
 	case 2:
 	{
 		Substract sub(a,b);
-		addValue = sub.sub();
+		arithmeticEqu = &sub;
+		addValue = arithmeticEqu->calculate();
 		break;
 	}
 	case 3:
 	{
 		Multiplication mul(a,b);
-		addValue = mul.multiply();
+		arithmeticEqu = &mul;
+		addValue = arithmeticEqu->calculate();
 		break;
 	}
 	case 4:
 	{
 		Division div(a,b);
-		addValue = div.divide();
+		arithmeticEqu = &div;
+		addValue = arithmeticEqu->calculate();
 		break;
 	}
 	default:
@@ -48,6 +52,7 @@ int calculator(int a, int b, int operationNumber) {
 
 
 int main() {
+
 	int a, b, operationNumber, calculateValue;
 	Logger logger;
 	logger.logDataWithNewLine("Enter First Number");

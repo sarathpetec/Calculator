@@ -21,7 +21,7 @@ int Substract::getValue2() {
 	return value2;
 }
 
-int Substract::sub() {
+int Substract::calculate() {
 	int result = getValue1() - getValue2();
 	return result;
 }
