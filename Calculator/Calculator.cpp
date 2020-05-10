@@ -15,8 +15,10 @@ int calculator(int a, int b, int operationNumber) {
 	{
 	case 1:
 	{
+
 		Sum sum(a, b);
-		addValue = sum.sum();
+		ArithmeticEquation* ae = &sum;
+		addValue = ae->calculate();
 		break; 
 	}
 	case 2:
@@ -61,4 +63,5 @@ int main() {
 	
 	calculateValue = calculator(a, b, operationNumber);
 	cout << "Sum of " << a << " and " << b <<" is :: "<< calculateValue <<endl;
+	cin.get();
 }
