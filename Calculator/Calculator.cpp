@@ -1,15 +1,22 @@
 #include<iostream>
+#include <algorithm>
+#include <string>
 #include "Sum.h"
 #include "Substract.h"
 #include "Multiplication.h"
 #include "Division.h"
 #include "Logger.h"
+#include <unordered_map>
 
 using namespace std;
 
-
+/*Method Prototype*/
 int getArithmeticEquation();
 bool doYouWantToProcessAgain();
+unordered_map<int, string> updateMap();
+
+/*Global variable declaration*/
+unordered_map <int, string> operations;
 
 int calculator(int a, int b, int operationNumber) {
 	int addValue = 0;
@@ -20,7 +27,6 @@ int calculator(int a, int b, int operationNumber) {
 	{
 	case 1:
 	{
-
 		Sum sum(a, b);
 		arithmeticEqu = &sum;
 		addValue = arithmeticEqu->calculate();
@@ -57,7 +63,7 @@ int calculator(int a, int b, int operationNumber) {
 
 int main() {
 
-	int a, b, operationNumber, calculateValue, userInput;
+	int a, b, operationNumber, calculateValue;
 	bool nextProcess = true;
 	Logger logger;
 	while (nextProcess) {
@@ -67,7 +73,7 @@ int main() {
 		cin >> b;
 		operationNumber = getArithmeticEquation();
 		calculateValue = calculator(a, b, operationNumber);
-		cout << "Sum of " << a << " and " << b << " is :: " << calculateValue << endl;
+		cout << operations[operationNumber] <<" of " << a << " and " << b << " is :: " << calculateValue << endl;
 		nextProcess = doYouWantToProcessAgain();	
 	}
 	cin.get();
@@ -76,13 +82,23 @@ int main() {
 int getArithmeticEquation() {
 	int operationNumber;
 	Logger logger;
+	operations = updateMap();
 	logger.logDataWithNewLine("Enter the Operation number need to perform");
-	logger.logDataWithNewLine("1. Addition");
-	logger.logDataWithNewLine("2. Substraction");
-	logger.logDataWithNewLine("3. Multiply");
-	logger.logDataWithNewLine("4. Division");
+	for (pair<int, string> const& op : operations) {
+		logger.logDataWithNewLine(to_string(op.first) + string(" - ") + string(op.second));
+	}
 	cin >> operationNumber;
 	return operationNumber;
+}
+
+unordered_map<int, string> updateMap() {
+	Logger logger;
+	logger.logDataWithNewLine("Going to set");
+	operations[1] = "Addition";
+	operations[2] = "Substraction";
+	operations[3] = "Multiply";
+	operations[4] = "Division";
+	return operations;
 }
 
 bool doYouWantToProcessAgain() {
