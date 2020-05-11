@@ -7,6 +7,10 @@
 
 using namespace std;
 
+
+int getArithmeticEquation();
+bool doYouWantToProcessAgain();
+
 int calculator(int a, int b, int operationNumber) {
 	int addValue = 0;
 	Logger logger;
@@ -51,6 +55,24 @@ int calculator(int a, int b, int operationNumber) {
 }
 
 
+int main() {
+
+	int a, b, operationNumber, calculateValue, userInput;
+	bool nextProcess = true;
+	Logger logger;
+	while (nextProcess) {
+		logger.logDataWithNewLine("Enter First Number");
+		cin >> a;
+		logger.logDataWithNewLine("Enter Second Number");
+		cin >> b;
+		operationNumber = getArithmeticEquation();
+		calculateValue = calculator(a, b, operationNumber);
+		cout << "Sum of " << a << " and " << b << " is :: " << calculateValue << endl;
+		nextProcess = doYouWantToProcessAgain();	
+	}
+	cin.get();
+}
+
 int getArithmeticEquation() {
 	int operationNumber;
 	Logger logger;
@@ -75,25 +97,6 @@ bool doYouWantToProcessAgain() {
 	else {
 		return false;
 	}
-}
-
-
-int main() {
-
-	int a, b, operationNumber, calculateValue, userInput;
-	bool nextProcess = true;
-	Logger logger;
-	while (nextProcess) {
-		logger.logDataWithNewLine("Enter First Number");
-		cin >> a;
-		logger.logDataWithNewLine("Enter Second Number");
-		cin >> b;
-		operationNumber = getArithmeticEquation();
-		calculateValue = calculator(a, b, operationNumber);
-		cout << "Sum of " << a << " and " << b << " is :: " << calculateValue << endl;
-		nextProcess = doYouWantToProcessAgain();	
-	}
-	cin.get();
 }
 
 
