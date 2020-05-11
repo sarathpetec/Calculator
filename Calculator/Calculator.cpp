@@ -57,7 +57,6 @@ int main() {
 	bool nextProcess = true;
 	Logger logger;
 	while (nextProcess) {
-		logger.logDataWithNewLine("Press Ctrl+Z to Quit");
 		logger.logDataWithNewLine("Enter First Number");
 		cin >> a;
 		logger.logDataWithNewLine("Enter Second Number");
