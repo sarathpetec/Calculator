@@ -31,7 +31,7 @@ int Division::calculate() {
 		}
 		result = getValue1() / getValue2();
 	}
-	catch (const std::runtime_error &e) {
+	catch (const std::runtime_error& e) {
 		Logger logger;
 		logger.logDataWithNewLine(e.what());
 	}

@@ -53,20 +53,35 @@ int calculator(int a, int b, int operationNumber) {
 
 int main() {
 
-	int a, b, operationNumber, calculateValue;
+	int a, b, operationNumber, calculateValue, userInput;
+	bool nextProcess = true;
 	Logger logger;
-	logger.logDataWithNewLine("Enter First Number");
-	cin >> a;
-	logger.logDataWithNewLine("Enter Second Number");
-	cin >> b;
-	logger.logDataWithNewLine("Enter the Operation number need to perform");
-	logger.logDataWithNewLine("1. Addition");
-	logger.logDataWithNewLine("2. Substraction");
-	logger.logDataWithNewLine("3. Multiply");
-	logger.logDataWithNewLine("4. Division");
-	cin >> operationNumber;
+	while (nextProcess) {
+		logger.logDataWithNewLine("Press Ctrl+Z to Quit");
+		logger.logDataWithNewLine("Enter First Number");
+		cin >> a;
+		logger.logDataWithNewLine("Enter Second Number");
+		cin >> b;
+		logger.logDataWithNewLine("Enter the Operation number need to perform");
+		logger.logDataWithNewLine("1. Addition");
+		logger.logDataWithNewLine("2. Substraction");
+		logger.logDataWithNewLine("3. Multiply");
+		logger.logDataWithNewLine("4. Division");
+		cin >> operationNumber;
+
+		calculateValue = calculator(a, b, operationNumber);
+		cout << "Sum of " << a << " and " << b << " is :: " << calculateValue << endl;
+
+		logger.logDataWithNewLine("If you want to do the calculation again press 1 otherwise 0");
+		cin >> userInput;
+		if (userInput == 1)
+		{
+			nextProcess = true;
+		}
+		else {
+			nextProcess = false;
+		}
+	}
 	
-	calculateValue = calculator(a, b, operationNumber);
-	cout << "Sum of " << a << " and " << b <<" is :: "<< calculateValue <<endl;
 	cin.get();
 }
