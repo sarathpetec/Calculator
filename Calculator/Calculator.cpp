@@ -19,7 +19,7 @@ unordered_map<int, string> updateMap();
 unordered_map <int, string> operations;
 
 int calculator(int a, int b, int operationNumber) {
-	int addValue = 0;
+	int addValue {0};
 	Logger logger;
 	Logger *loggerPointer = &logger;
 	ArithmeticEquation<int> *arithmeticEqu;
