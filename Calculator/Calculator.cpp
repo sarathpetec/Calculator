@@ -18,10 +18,11 @@ unordered_map<int, string> updateMap();
 /*Global variable declaration*/
 unordered_map <int, string> operations;
 
-int calculator(int a, int b, int operationNumber) {
-	int addValue {0};
+template<class T>
+T calculator(const T a, const T& b, int operationNumber) {
+	T addValue;
 	Logger logger;
-	Logger *loggerPointer = &logger;
+	Logger* loggerPointer ={ &logger };
 	ArithmeticEquation<int> *arithmeticEqu;
 	switch (operationNumber)
 	{
@@ -49,8 +50,9 @@ int calculator(int a, int b, int operationNumber) {
 	case 4:
 	{
 		Division div(a,b);
-		arithmeticEqu = &div;
-		addValue = arithmeticEqu->calculate();
+		ArithmeticEquation<float>* arithmeticEquDiv;
+		arithmeticEquDiv = &div;
+		addValue = arithmeticEquDiv->calculate();
 		break;
 	}
 	default:
