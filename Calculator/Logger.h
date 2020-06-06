@@ -8,6 +8,5 @@ class Logger {
 private:
 public: 
 	void logDataWithNewLine(string msg) ;
-	void logData(string msg);
 protected:
 };

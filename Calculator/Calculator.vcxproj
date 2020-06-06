@@ -142,6 +142,7 @@
     <ClCompile Include="Division.cpp" />
     <ClCompile Include="Multiplication.cpp" />
     <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="CalculatorTest.cpp" />
     <ClCompile Include="Substract.cpp" />
     <ClCompile Include="Sum.cpp" />
   </ItemGroup>

@@ -2,9 +2,5 @@
 
 void Logger::logDataWithNewLine(string msg) {
 
-	cout << msg << "\n";
+	cout << msg << endl;
 };
-
-void Logger::logData(string msg) {
-	cout << msg;
-}
