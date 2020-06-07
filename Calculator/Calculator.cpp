@@ -19,7 +19,7 @@ unordered_map<int, string> updateMap();
 unordered_map <int, string> operations;
 
 template<class T>
-T calculator(const T a, const T& b, int operationNumber) {
+T calculator(const T& a, const T& b, int operationNumber) {
 	T addValue;
 	Logger logger;
 	Logger* loggerPointer ={ &logger };
@@ -65,7 +65,8 @@ T calculator(const T a, const T& b, int operationNumber) {
 
 int main() {
 
-	int a, b, operationNumber, calculateValue;
+	float a, b, calculateValue;
+	int operationNumber;
 	bool nextProcess = true;
 	Logger logger;
 	while (nextProcess) {
